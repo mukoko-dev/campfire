@@ -19,7 +19,7 @@ something to work on if you'd like to do so.
 
 ## What this means in practice
 
-### If you'd like to contribute to the code...
+### If you'd like to contribute to the code
 
 1. If you're interested in working on one of the open issues, please do! We are
    grateful for the help!
@@ -30,20 +30,19 @@ something to work on if you'd like to do so.
    the issue as you go, and we'll do our best to help.
 4. When you have something ready for review or collaboration, open a PR.
 
-### If you've found a bug...
+### If you've found a bug
 
 1. If you don't have steps to reproduce the problem, or you're not certain it's a
    bug, open a discussion.
 2. If you have steps to reproduce, open an issue.
 
-### If you have an idea for a feature...
+### If you have an idea for a feature
 
 1. Open a discussion.
 
-### If you have a question, or are having trouble with configuration...
+### If you have a question, or are having trouble with configuration
 
 1. Open a discussion.
 
 Hopefully this process makes it easier for everyone to be involved. Thanks for
 helping! ❤️
-
