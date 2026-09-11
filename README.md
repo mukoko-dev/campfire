@@ -1,5 +1,34 @@
 # Campfire
 
+> **This is a fork of [basecamp/once-campfire](https://github.com/basecamp/once-campfire),
+> not a Nyuchi original.** Campfire is 37signals' ONCE product, released by
+> Basecamp as a Rails application under the MIT licence. Everything below this
+> notice is Basecamp's own README, kept because it accurately describes the
+> code.
+
+**Upstream:** [basecamp/once-campfire](https://github.com/basecamp/once-campfire) | **Divergence:** none in application code | **Licence:** MIT (37signals)
+
+## About this fork
+
+The fork carries **no Nyuchi-authored application changes**. Diffing this
+branch against the upstream commit it was taken from shows twelve changed
+files, all of them repository plumbing: the org's shared lint gate
+(`.github/workflows/lint.yml`, `.editorconfig`, `.prettierrc`,
+`.prettierignore`, `.markdownlint.jsonc`, `.yamllint.yaml`), version bumps in
+the existing CI and image-publishing workflows, a RuboCop tweak, and edits to
+`CONTRIBUTING.md` and an issue template. No file under `app/`, `lib/`,
+`config/` or `db/` differs from upstream.
+
+The most recent upstream application commit carried here is from **2026-01-15**.
+Upstream continues to develop; this fork is not currently tracking it.
+
+If you want Campfire, take it from
+[basecamp/once-campfire](https://github.com/basecamp/once-campfire). If you want
+to know what Nyuchi changed, the answer is: the lint configuration, and nothing
+else.
+
+---
+
 Campfire is a web-based chat application. It supports many of the features you'd
 expect, including:
 
@@ -59,3 +88,9 @@ so that people who forget their password know who to contact for help.
 Campfire is single-tenant: any rooms designated "public" will be accessible by
 all users in the system. To support entirely distinct groups of customers, you
 would deploy multiple instances of the application.
+
+## Licence
+
+Campfire is licensed under the MIT licence by 37signals; see
+[MIT-LICENSE](MIT-LICENSE). This fork adds no code and claims no copyright over
+the application.
