@@ -11,10 +11,10 @@
 ## About this fork
 
 The fork carries **no Nyuchi-authored application changes**. Diffing this
-branch against the upstream commit it was taken from shows twelve changed
-files, all of them repository plumbing: the org's shared lint gate
-(`.github/workflows/lint.yml`, `.editorconfig`, `.prettierrc`,
-`.prettierignore`, `.markdownlint.jsonc`, `.yamllint.yaml`), version bumps in
+branch against the upstream commit it was taken from shows eleven changed
+files, all of them repository plumbing: the config for the org's shared lint
+gate (`.editorconfig`, `.prettierrc`, `.prettierignore`,
+`.markdownlint.jsonc`, `.yamllint.yaml`), version bumps in
 the existing CI and image-publishing workflows, a RuboCop tweak, and edits to
 `CONTRIBUTING.md` and an issue template. No file under `app/`, `lib/`,
 `config/` or `db/` differs from upstream.
