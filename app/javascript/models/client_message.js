@@ -62,7 +62,11 @@ export default class ClientMessage {
   }
 
   #stripWrapperElement(node) {
-    return node.innerHTML?.replace(/<div>(?:<!--[\s\S]*?-->)*([\s\S]*?)<\/div>/i, '$1')
+    // Only the leading text matters (the play command is matched at the start), so
+    // strip the opening <div> and any leading comments with anchored, unambiguous
+    // patterns. The previous single regex backtracked exponentially on long runs
+    // of comments without a closing </div> (CodeQL js/redos).
+    return node.innerHTML?.replace(/^<div>/i, "").replace(/^(?:<!--(?:(?!-->)[\s\S])*-->)*/, "")
   }
 
 
