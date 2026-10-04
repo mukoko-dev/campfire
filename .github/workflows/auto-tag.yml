@@ -1,0 +1,37 @@
+# Versioning policy (nyuchi/.github#80): a release to `main` is the next
+# MINOR, computed from the tags (Campfire has no version file). The first
+# release is v0.1.0. The tag is pushed with RELEASE_BUMP_TOKEN so that
+# publish-image.yml starts on it and publishes the semver tags and :latest.
+name: Auto tag
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Override the bump (major is only ever manual).
+        type: choice
+        options: [minor, patch, major]
+        default: minor
+
+permissions:
+  contents: read
+
+jobs:
+  tag:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    uses: nyuchi/.github/.github/workflows/reusable-auto-tag.yml@924e5b4d0983d31379aedbec02b990793f29c792 # main, 2026-10-04
+    with:
+      version-command: ""
+      channel: main
+      ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      bump: ${{ inputs.bump || '' }}
+      create-release: true
+    # The PAT pushes the tag; the run's own token only reads.
+    permissions:
+      contents: read
+    secrets:
+      token: ${{ secrets.RELEASE_BUMP_TOKEN }}
